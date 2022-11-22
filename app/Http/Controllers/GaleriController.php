@@ -15,11 +15,12 @@ class GaleriController extends Controller
     //
     public function index(){
         $batas = 4;
-        $buku = Buku::all();
+        // $buku = Buku::all();
         // $galeri = Galeri::orderBy('id', 'desc')->paginate($batas);
         $galeri = Galeri::orderBy('id')->paginate($batas);
         $no = $batas * ($galeri->currentPage() - 1);
-        return view ('galeri.index', compact('galeri', 'no', 'buku'));
+        // return view ('galeri.index', compact('galeri', 'no', 'buku'));
+        return view ('galeri.index', compact('galeri', 'no'));
     }
     
     public function create(){
@@ -35,6 +36,7 @@ class GaleriController extends Controller
         ]);
         $galeri = New Galeri;
         $galeri->nama_galeri = $request->nama_galeri;
+        // $galeri->galeri_seo = $request->galeri_seo;
         $galeri->keterangan = $request->keterangan;
         $galeri->id_buku = $request->id_buku;
         

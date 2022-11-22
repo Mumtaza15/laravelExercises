@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Buku;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {   
@@ -37,6 +38,9 @@ class BukuController extends Controller
         $buku = new Buku;
         $buku->judul = $request->judul;
         $buku->penulis = $request->penulis;
+
+        $buku->buku_seo = Str::Slug($request->judul, '-');
+
         $buku->harga = $request->harga;
         $buku->tgl_terbit = $request->tgl_terbit;
         $buku->save();
@@ -78,9 +82,9 @@ class BukuController extends Controller
     }
 
     public function galbuku($title){
-        $bukus = Buku::where('buku_seo', $title)->first();
-        $galeris = $bukus->photos()->orderBy('id', 'desc')->paginate(6);
-        return view('galeri-buku', compact('$bukus', 'galeris'));
+        $buku = Buku::where('buku_seo', $title)->first();
+        $galeris = $buku->photos()->orderBy('id', 'desc')->paginate(6);
+        return view('galeri.foto', compact('buku', 'galeris'));
     }
 
 }

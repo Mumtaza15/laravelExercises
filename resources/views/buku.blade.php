@@ -51,13 +51,16 @@
                 <td>{{ $buku->tgl_terbit}}</td>
                 <td>
                     <a href="{{route('buku.edit', $buku->id)}}">
-                        <button>Update</button>
+                        <button class="btn btn-info">Update</button>
                     </a>
-                    <br>
                     <form action="{{route('buku.destroy', $buku->id)}}" method="post">
                         @csrf
-                        <button onClick="return confirm('Yakin mau dihapus?')">Hapus</button>
+                        <button class="btn btn-danger"onClick="return confirm('Yakin mau dihapus?')">Hapus</button>
                     </form>
+                    <a href="{{route('buku.detail-buku', $buku->buku_seo)}}">
+                        <button class="btn btn-success">Detail</button>
+                    </a>
+                    
                 </td>
 
             </tr>
@@ -65,13 +68,14 @@
     </tbody>
 </table>
 
+<p align="right"><a href="{{ route('buku.create')}}"><button class="btn btn-secondary">Tambah Buku</button></a></p>
+
 <div>{{ $data_buku->links('pagination::bootstrap-5') }}</div>
 
 <!-- <div><strong>Jumlah Buku:{{ $jumlah_buku }}</strong></div>
 
 <p>Total harga Buku : {{"Rp. ".number_format($buku->sum('harga'))}}</p> -->
 
-<!-- <p align="left"><a href="{{ route('buku.create')}}"><button>Tambah Buku</button></a></p> -->
 @endsection
 <!-- <h3>Jumlah Data : {{$buku->count('id')}}</h3>
 

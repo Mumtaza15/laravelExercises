@@ -23,7 +23,7 @@
         <tr>
             <td>{{ ++$no }}</td>
             <td>{{ $data->nama_galeri }}</td>
-            <td>{{ $data->albums->judul }}</td>
+            <td>{{ $data->albums->judul}}</td>
             <td><img src="{{ asset('thumb/'.$data->foto) }}" style="width: 100px;"></td>
             <td>
                 <form action="{{ route('galeri.destroy', $data->id) }}" method="post">@csrf
@@ -37,4 +37,9 @@
     @endforeach
     </tbody>
 </table>
+
+<p align="right"><a href="{{ route('galeri.create')}}"><button class="btn btn-secondary">Tambah Foto</button></a></p>
+
+<div>{{ $galeri->links('pagination::bootstrap-5') }}</div>
+
 @endsection

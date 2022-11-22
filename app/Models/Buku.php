@@ -12,6 +12,7 @@ class Buku extends Model
     protected $fillable = ['judul', 'penulis', 'harga', 'tgl_terbit'];
 
     public function photos(){
-        return $this->hasMany('App\Buku', 'id_buku', 'id');
+        // return $this->hasMany('App\Buku', 'id_buku', 'id');
+        return $this->hasMany(Galeri::class, 'id_buku', 'id');
     }
 }

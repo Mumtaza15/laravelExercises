@@ -30,11 +30,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-<script>
+<!-- <script>
   $( function() {
     $( "#datepicker" ).datepicker();
   } );
-  </script>
+  </script> -->
 
 
 <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
