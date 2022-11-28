@@ -18,8 +18,8 @@
     <!-- <link rel="stylesheet" href="/css/app.525f5899.css">
     <script src="/js/app.e9741f2c.js"></script> -->
 
-    <link rel="stylesheet" href="resources/css/app.525f5899.css">
-    <script src="resources/js/app.e9741f2c.js"></script>
+    <link rel="stylesheet" href="/app.525f5899.css">
+    <script src="/app.e9741f2c.js"></script>
 
     @stack('isi')
 </head>
