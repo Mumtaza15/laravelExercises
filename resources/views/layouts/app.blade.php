@@ -16,6 +16,9 @@
     <!-- Scripts
     @vite(['resources/sass/app.scss', 'resources/js/app.js']) -->
 
+    <!-- <link rel="stylesheet" href="/css/app.525f5899.css">
+    <script src="/js/app.e9741f2c.js"></script> -->
+
     <link rel="stylesheet" href="/css/app.525f5899.css">
     <script src="/js/app.e9741f2c.js"></script>
 
