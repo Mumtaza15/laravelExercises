@@ -13,14 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galeri', function (Blueprint $table) {
+        Schema::create('komentar', function (Blueprint $table) {
+
             $table->id();
-            $table->string('nama_galeri');
-            $table->text('keterangan');
-            $table->string('foto');
             $table->unsignedBigInteger('id_buku');
             $table->foreign('id_buku')->references('id')->on('buku')->onDelete('cascade');
+            
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            
+            $table->text('comment');
             $table->timestamps();
+            
         });
     }
 
@@ -31,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeri');
+        Schema::dropIfExists('komentar');
     }
 };

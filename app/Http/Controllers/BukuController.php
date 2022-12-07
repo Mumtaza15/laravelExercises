@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Buku;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\Komentar;
 
 class BukuController extends Controller
 {   
@@ -84,7 +85,21 @@ class BukuController extends Controller
     public function galbuku($title){
         $buku = Buku::where('buku_seo', $title)->first();
         $galeris = $buku->photos()->orderBy('id', 'desc')->paginate(6);
-        return view('galeri.foto', compact('buku', 'galeris'));
+
+        // $batas = 5;
+        // $data_komentar = $buku->addComment()->orderBy('id')->paginate($batas);
+        // $no = $batas * ($data_komentar->currentPage() - 1);
+        // $data_komentar = $buku->addComment()->orderBy('id')->paginate(5);
+
+        $data_komentar = $buku->addComment()->paginate(10);
+
+        return view('galeri.foto', compact('buku', 'galeris', 'data_komentar'));
+    }
+
+    public function likefoto(Request $request, $id){
+        $buku = Buku::find($id);
+        $buku->increment('suka');
+        return back();
     }
 
 }

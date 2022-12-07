@@ -19,6 +19,5 @@ class UserController extends Controller
         $no = 0;
         return view('user.index', compact('dataUser', 'no'));
         // return view('user', compact('dataUser'));
-
     }
 }

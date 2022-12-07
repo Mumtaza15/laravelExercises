@@ -38,6 +38,7 @@
             <th>Harga</th>
             <th>Tgl. Terbit</th>
             <th>Aksi</th>
+            <th>Like</th>
         </tr>
     </thead>
 
@@ -60,7 +61,12 @@
                     <a href="{{route('buku.detail-buku', $buku->buku_seo)}}">
                         <button class="btn btn-success">Detail</button>
                     </a>
-                    
+                </td>
+                <td>
+                    <a href="{{ route('like.foto', $buku->id) }}" class="btn btn-primary btn-sm">
+                        <i class="fa fa-thumbs-up"></i> like
+                        <span class="badge badge-light"> {{$buku->suka}}</span>
+                    </a>
                 </td>
 
             </tr>

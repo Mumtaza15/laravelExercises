@@ -13,8 +13,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-
-
     <!-- <link rel="stylesheet" href="/css/app.525f5899.css">
     <script src="/js/app.e9741f2c.js"></script> -->
 
